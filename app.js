@@ -1,38 +1,18 @@
-var express = require('express'),
-    http = require('http'),
-    formidable = require('formidable'),
-    fs = require('fs'),
-    path = require('path');
+const express = require('express')
+const fileUpload = require('express-fileupload')
+const uploadCtrl = require('./controllers/uploadCtrl')
 
-var app = express();
+const app = express();
+app.use(fileUpload())
 
-// All your express server code goes here.
-// ...
 
-// Upload route.
-app.post('/upload', function(req, res) {
-    var form = new formidable.IncomingForm();
-    form.parse(req, function(err, fields, files) {
-        // `file` is the name of the <input> field of type `file`
-        var old_path = files.file.path,
-            file_size = files.file.size,
-            file_ext = files.file.name.split('.').pop(),
-            index = old_path.lastIndexOf('/') + 1,
-            file_name = old_path.substr(index),
-            new_path = path.join(process.env.PWD, '/uploads/', file_name + '.' + file_ext);
+app.get('/', (req, res) => {
+  res.sendFile(__dirname+'/views/index.html');
+})
 
-        fs.readFile(old_path, function(err, data) {
-            fs.writeFile(new_path, data, function(err) {
-                fs.unlink(old_path, function(err) {
-                    if (err) {
-                        res.status(500);
-                        res.json({'success': false});
-                    } else {
-                        res.status(200);
-                        res.json({'success': true});
-                    }
-                });
-            });
-        });
-    });
-});
+
+app.post('/upload', uploadCtrl);
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!')
+})
