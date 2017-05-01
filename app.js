@@ -5,8 +5,6 @@ const uploadCtrl = require('./controllers/uploadCtrl')
 const indexCtrl = require('./controllers/indexCtrl')
 const listCtrl = require('./controllers/listCtrl')
 
-uploadFolder();
-
 const app = express();
 app.use(fileUpload())
 
