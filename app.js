@@ -1,6 +1,5 @@
 const express = require('express')
 const fileUpload = require('express-fileupload')
-const uploadFolder = require('./lib/checkOrCreateUploadFolder')
 
 const uploadCtrl = require('./controllers/uploadCtrl')
 const indexCtrl = require('./controllers/indexCtrl')
