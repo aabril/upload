@@ -1,12 +1,12 @@
 const express = require('express')
-const fileUpload = require('express-fileupload')
+const fileuploadMiddleware = require('express-fileupload')
 
 const uploadCtrl = require('./controllers/uploadCtrl')
 const indexCtrl = require('./controllers/indexCtrl')
 const listCtrl = require('./controllers/listCtrl')
 
 const app = express();
-app.use(fileUpload())
+app.use(fileuploadMiddleware())
 
 app.get('/', indexCtrl)
 app.get('/list', listCtrl)
