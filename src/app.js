@@ -6,9 +6,8 @@ const loadRoutes = require('./routes');
 const setupExpress = require('./express');
 
 const fs = require('fs')
-const pathDir = '/tmp/uploads'
-if (!fs.existsSync(pathDir)){
-    fs.mkdirSync(pathDir)
+if (!fs.existsSync(config.PATH_DIR)){
+    fs.mkdirSync(config.PATH_DIR)
 }
 
 setupExpress(app)

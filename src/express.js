@@ -2,6 +2,7 @@ const path = require('path')
 const fileuploadMiddleware = require('express-fileupload')
 const bodyParser = require('body-parser')
 const session = require('express-session')
+const config = require('../config.json');
 
 const configExpress = (app) => {
   app.use(fileuploadMiddleware())
@@ -12,7 +13,7 @@ const configExpress = (app) => {
   app.set('views', path.join(__dirname, '/views'));
 
   app.use(session({
-    secret: '2C44-4D44-WppQ38S',
+    secret: config.SESSION_SECRET,
     resave: true,
     saveUninitialized: true
   }))

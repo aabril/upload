@@ -1,5 +1,7 @@
 {
   "PORT": 3000,
   "LOGIN_USER": "admin",
-  "LOGIN_PASS": "password"
+  "LOGIN_PASS": "password",
+  "SESSION_SECRET": "2C44-4D44-WppQ38S",
+  "PATH_DIR": "/tmp/uploads"
 }
