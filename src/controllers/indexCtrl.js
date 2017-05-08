@@ -1,7 +1,11 @@
 const path = require('path')
 
 const indexCtrl = (req, res) => {
-  res.render('index')
+  if(req.session.authenticated){
+    return res.render('index')
+  }else{
+    return res.redirect('login')
+  }
 }
 
 module.exports = indexCtrl

@@ -5,24 +5,23 @@ head
   title Login
   meta(name='viewport', content='width=device-width, initial-scale=1')
   link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,700', rel='stylesheet')
+  link(href='assets/login.css', rel='stylesheet')
 .grid
-  form.form.login(action='https://httpbin.org/post', method='POST')
+  form.form.login(action='/login', method='POST')
     .form__field
-      label(for='login__username')
+      label(for='login_username')
         svg.icon
           use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='#user')
         span.hidden Username
       input#login__username.form__input(type='text', name='username', placeholder='Username', required='')
     .form__field
-      label(for='login__password')
+      label(for='login_password')
         svg.icon
           use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='#lock')
         span.hidden Password
       input#login__password.form__input(type='password', name='password', placeholder='Password', required='')
     .form__field
       input(type='submit', value='Sign In')
-  p.text--center
-    a(href='#') Sign up now
     svg.icon
       use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='assets/images/icons.svg#arrow-right')
 svg.icons(xmlns='http://www.w3.org/2000/svg')
