@@ -2,10 +2,6 @@
   "name": "upload",
   "version": "1.0.0",
   "description": "",
-  "engines": {
-    "node": "6.10.0",
-    "npm": "3.10.10"
-  },
   "scripts": {
     "start": "node ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
