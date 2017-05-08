@@ -9,3 +9,10 @@ head
         input(type='text', name='title')
         input(type='file', name='fileUploaded')
         input(type='submit', value='Upload')
+
+    .files
+      each val, index in files
+        p #{index} -  
+          a(href=val.filename) #{val.filename} 
+          if val.directory
+            b (dir)
