@@ -1,18 +1,9 @@
 const fs = require('fs');
 
-
-
 const listCtrl = (req, res) => {
-  const testFolder = '/tmp/'
-  const files = []
-
-  fs.readdir(testFolder, (err, files) => {
-    files.forEach(file => {
-      files.push
-    })
-  })
-
-  res.render('../views/list.html', files)
+  const pathDir = '/tmp/uploads'
+  const files = fs.readdirSync(pathDir);
+  res.send(files)
 }
 
 module.exports = listCtrl

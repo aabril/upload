@@ -2,6 +2,10 @@
   "name": "upload",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "6.10.0",
+    "npm": "3.10.10"
+  },
   "scripts": {
     "start": "node ./app.js",
     "deploy": "git push dokku master"
@@ -9,6 +13,7 @@
   "dependencies": {
     "express": "^4.15.2",
     "express-fileupload": "^0.1.3",
-    "html": "^1.0.0"
+    "html": "^1.0.0",
+    "slug": "^0.9.1"
   }
 }
