@@ -12,6 +12,6 @@ app.get('/', indexCtrl)
 app.post('/upload', uploadCtrl)
 //app.get('/list', listCtrl)
 
-app.listen(3001, function () {
-  console.log('Example app listening on port 3001!')
+app.listen(80, function () {
+  console.log('Example app listening on port 80!')
 })
