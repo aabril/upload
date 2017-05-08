@@ -1,8 +1,7 @@
 const path = require('path')
 
 const indexCtrl = (req, res) => {
-  const filePath = path.resolve(__dirname, '../views/index.html')
-  res.sendFile(filePath);
+  res.render('index')
 }
 
 module.exports = indexCtrl

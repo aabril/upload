@@ -7,13 +7,14 @@
     "npm": "3.10.10"
   },
   "scripts": {
-    "start": "node ./app.js",
+    "start": "node ./src/app.js",
     "deploy": "git push dokku master"
   },
   "dependencies": {
     "express": "^4.15.2",
     "express-fileupload": "^0.1.3",
     "html": "^1.0.0",
+    "pug": "^2.0.0-rc.1",
     "slug": "^0.9.1"
   }
 }
