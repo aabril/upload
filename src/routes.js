@@ -10,6 +10,7 @@ const loadRoutes = (app, express) => {
   app.post('/login', loginCtrl.post)
   app.use('/assets', express.static('src/assets'))
   app.get('/:filename', serveCtrl)
+  app.get('/:filename/:width/:height', serveCtrl)
 }
 
 module.exports = loadRoutes
