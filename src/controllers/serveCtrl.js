@@ -2,6 +2,8 @@ const config = require('../../config')
 const mime = require('mime')
 const sharp = require('sharp')
 
+const DEFAULTS_IMG_MAX_WIDTH = 1200;
+
 const serveCtrl = (req, res) => {
   const filename = req.params.filename
   const filePath = config.PATH_DIR + '/' + filename
@@ -15,7 +17,7 @@ const serveCtrl = (req, res) => {
     'image/gif',
     'image/svg+xml',
     'image/tiff'
-  ];
+  ]
 
   if(imageMimetypes.includes(fileMimetype)){
     const image = sharp(filePath);
@@ -32,6 +34,10 @@ const serveCtrl = (req, res) => {
       if(req.params.width && req.params.height){
         width = parseInt(req.params.width)
         height = parseInt(req.params.height)
+      }else if(req.params.width){
+        width = parseInt(req.params.width)
+      }else if(metadata.width < DEFAULTS_IMG_MAX_WIDTH){
+        width = metadata.width
       }else{
         width = 400;
       }
